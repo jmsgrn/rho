@@ -1,0 +1,16 @@
+{
+  "name": "rho",
+  "version": "0.1.0",
+  "description": "A personal, tailored terminal coding agent - budget-enforcing (token budgets) and auditable.",
+  "type": "module",
+  "bin": { "rho": "./src/index.ts" },
+  "scripts": {
+    "rho": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5.0"
+  },
+  "license": "MIT"
+}

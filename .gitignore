@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.log
+
+# rho's own audit log + local state
+.rho/
+
+.DS_Store
+
+# personal config override (defaults are in src/config.ts)
+rho.config.json
