@@ -1,16 +1,12 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { $ } from "bun";
-
-export interface Tool {
-  name: string;
-  description: string;
-  run(input: string): Promise<string>;
-}
+import type { Tool } from "./capability.ts";
 
 /**
- * Minimal starter tools. The agent loop (agent.ts) will eventually expose these
- * to the model as callable tools - for now they're here to extend and to test
- * the audit/budget pipeline against. Add edit/grep/ls as you go.
+ * Minimal starter tools, exposed to the agent through the core-tools capability.
+ * The runtime's tool-calling loop will make these callable by the model; for now
+ * they exist to extend and to exercise the audit/budget pipeline. Add edit/grep/
+ * ls as you go - or ship them as a separate capability.
  */
 export const tools: Record<string, Tool> = {
   read: {

@@ -1,7 +1,7 @@
 {
   "name": "rho",
-  "version": "0.1.0",
-  "description": "A personal, tailored terminal coding agent - budget-enforcing (token budgets) and auditable.",
+  "version": "0.2.0",
+  "description": "A self-extending coding agent: capabilities over an event bus, budget-enforcing and auditable.",
   "type": "module",
   "bin": { "rho": "./src/index.ts" },
   "scripts": {

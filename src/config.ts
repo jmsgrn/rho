@@ -6,6 +6,12 @@ export type Provider = "anthropic" | "openai" | "google" | "local";
 export interface RhoConfig {
   provider: Provider;
   model: string;
+  /**
+   * Capabilities to load at startup, in order. The kernel has no built-in
+   * behavior - budget, audit, tools, and the runtime are ALL capabilities.
+   * Drop one to disable it; add your own (later: from `.rho/capabilities/`).
+   */
+  capabilities: string[];
   budget: {
     /** Hard ceiling - rho refuses a request that would exceed this. */
     maxTokensPerSession: number;
@@ -22,6 +28,7 @@ export interface RhoConfig {
 export const defaultConfig: RhoConfig = {
   provider: "anthropic",
   model: "claude-opus-4-8",
+  capabilities: ["audit", "budget", "core-tools", "pi-runtime"],
   budget: { maxTokensPerSession: 200_000, compactAtTokens: 150_000 },
   audit: { enabled: true, path: ".rho/audit.jsonl" },
 };
