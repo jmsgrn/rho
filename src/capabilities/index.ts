@@ -3,6 +3,7 @@ import { auditCapability } from "./audit.ts";
 import { budgetCapability } from "./budget.ts";
 import { coreToolsCapability } from "./core-tools.ts";
 import { piRuntimeCapability } from "./pi-runtime.ts";
+import { stubRuntimeCapability } from "./stub-runtime.ts";
 
 /**
  * Built-in capabilities, keyed by name. `config.capabilities` selects which load
@@ -14,4 +15,5 @@ export const builtins: Record<string, Capability> = {
   budget: budgetCapability,
   "core-tools": coreToolsCapability,
   "pi-runtime": piRuntimeCapability,
+  "stub-runtime": stubRuntimeCapability,
 };

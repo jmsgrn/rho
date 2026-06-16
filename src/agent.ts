@@ -30,6 +30,6 @@ export async function runTurn(
   });
 
   history.push({ role: "assistant", content: result.text });
-  await kernel.bus.emit("assistant_reply", { text: result.text });
+  await kernel.bus.emit("assistant_reply", { text: result.text, usage: result.usage });
   return result.text;
 }

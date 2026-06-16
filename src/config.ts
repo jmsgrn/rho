@@ -27,7 +27,10 @@ export interface RhoConfig {
 
 export const defaultConfig: RhoConfig = {
   provider: "anthropic",
-  model: "claude-opus-4-8",
+  // Model id must exist in pi-ai's registry for the chosen provider. pi-ai
+  // 0.73.1's newest Opus is claude-opus-4-7 (bump pi-ai for newer). Override in
+  // rho.config.json, or switch to "stub-runtime" to run with no model at all.
+  model: "claude-opus-4-5",
   capabilities: ["audit", "budget", "core-tools", "pi-runtime"],
   budget: { maxTokensPerSession: 200_000, compactAtTokens: 150_000 },
   audit: { enabled: true, path: ".rho/audit.jsonl" },

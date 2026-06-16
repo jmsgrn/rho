@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "description": "A self-extending coding agent: capabilities over an event bus, budget-enforcing and auditable.",
   "type": "module",
-  "bin": { "rho": "./src/index.ts" },
+  "bin": {
+    "rho": "./src/index.ts"
+  },
   "scripts": {
     "rho": "bun run src/index.ts",
     "typecheck": "tsc --noEmit"
@@ -12,5 +14,9 @@
     "@types/bun": "latest",
     "typescript": "^5.5.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@mariozechner/pi-agent-core": "^0.73.1",
+    "@mariozechner/pi-ai": "^0.73.1"
+  }
 }

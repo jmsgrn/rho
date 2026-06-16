@@ -13,6 +13,8 @@ export interface CompletionRequest {
 
 export interface CompletionResult {
   text: string;
+  /** Real provider token usage, when the runtime reports it (the stub doesn't). */
+  usage?: { input: number; output: number; totalTokens: number };
 }
 
 /**
